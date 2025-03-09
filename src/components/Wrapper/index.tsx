@@ -5,7 +5,9 @@ interface WrapperProps {
 export default function Wrapper({ children }: WrapperProps) {
     return (
         <main className="container">
-            {children}
+            <section>
+                {children}
+            </section>
         </main>
     )
 }
