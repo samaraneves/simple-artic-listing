@@ -1,9 +1,10 @@
+import Title from "../../components/Title";
 import Wrapper from "../../components/Wrapper";
 
 export default function Home() {
     return (
         <Wrapper>
-            <p>ok</p>
+            <Title />
         </Wrapper>
     )
 }
