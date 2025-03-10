@@ -5,14 +5,18 @@ import Card from ".";
 const mock = {
     title: 'Unlocking the Power of Cloud Computing',
     time: '2024-11-12',
-    timeFormatted: 'November 12, 2024'
+    timeFormatted: 'November 12, 2024',
+    image: 'https://placehold.co/150.png'
 }
 describe('<Card /> Component', () => {
     beforeEach(() => {
-         render(<Card 
+         render(
+            <Card 
                 title={mock.title}
                 time={mock.time}
-            />)
+                image={mock.image}
+            />
+        )
     })
     it('should render card', () => {
         const card = screen.getByRole('article')
@@ -35,5 +39,13 @@ describe('<Card /> Component', () => {
         expect(time).toBeInTheDocument()
         expect(time).toBeVisible()
         expect(time.textContent).toBe(mock.timeFormatted)
+    })
+
+    it('should render image', () => {
+        const image = screen.getByRole('img')
+
+        expect(image).toBeInTheDocument()
+        expect(image).toBeVisible()
+        expect(image.getAttribute('src')).toBe(mock.image)
     })
 })
