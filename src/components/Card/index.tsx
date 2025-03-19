@@ -12,7 +12,7 @@ export default function Card({ title = '', time = '', image = '' }: CardProps) {
     return (
         <article className="w-full flex flex-col gap-4 items-center sm:flex-row lg:gap-16">
             {image && (
-                <img role="img" src={image} width={150} height={150} alt="" className="rounded-md" loading="lazy" />
+                <img data-testid="post-image" src={image} width={150} height={150} alt="" className="rounded-md" loading="lazy" />
             )}
             
             <header className="w-full flex flex-col justify-center gap-4">

@@ -42,7 +42,7 @@ describe('<Card /> Component', () => {
     })
 
     it('should render image', () => {
-        const image = screen.getByRole('img')
+        const image = screen.getByTestId('post-image')
 
         expect(image).toBeInTheDocument()
         expect(image).toBeVisible()
