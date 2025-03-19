@@ -1,11 +1,14 @@
-import Card from "../../components/Card";
-import Separator from "../../components/Separator";
-import Title from "../../components/Title";
-import Wrapper from "../../components/Wrapper";
+import Separator from "../../components/Separator"
+import Title from "../../components/Title"
+import Wrapper from "../../components/Wrapper"
 
-import Photo1 from '../../assets/photo_1.png'
-import Photo2 from '../../assets/photo_2.png'
-import Photo3 from '../../assets/photo_3.png'
+import Photo1 from '../../assets/photo_1.webp'
+import Photo2 from '../../assets/photo_2.webp'
+import Photo3 from '../../assets/photo_3.webp'
+
+import { lazy } from "react"
+
+const Card = lazy(() => import("../../components/Card"))
 
 type Card = {
     title: string

@@ -12,7 +12,19 @@ export default function Card({ title = '', time = '', image = '' }: CardProps) {
     return (
         <article className="w-full flex flex-col gap-4 items-center sm:flex-row lg:gap-16">
             {image && (
-                <img data-testid="post-image" src={image} width={150} height={150} alt="" className="rounded-md" loading="lazy" />
+                <picture>
+                    <source srcSet={image} type="image/webp" />
+                    <source srcSet={image} type="image/jpeg" />
+                    <img 
+                        className="rounded-md"
+                        src={image}
+                        width="150"
+                        height="150"
+                        alt=""
+                        loading="eager"
+                        fetchPriority="high"
+                    />
+                </picture>
             )}
             
             <header className="w-full flex flex-col justify-center gap-4">
