@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { render, screen } from "@testing-library/react"
+import { render, screen, waitFor } from "@testing-library/react"
 
 import Title from '.'
 
@@ -14,9 +14,10 @@ describe('<Title /> Component', () => {
         expect(title).toBeVisible()
     })
 
-    it('should render the written title "We release interesting articles about technology"', () => {
+    it('should render the written title "We release interesting articles about technology"', async () => {
         const title = screen.getByRole('heading')
 
-        expect(title.textContent).toBe('We release interesting articles about technology')
+        await waitFor(() => expect(title.textContent).toBe('We release interesting articles about technology'))
+        
     })
 })

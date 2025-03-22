@@ -7,7 +7,8 @@ describe('Home Page', () => {
     beforeEach(() => {
         render(<Home />)
     })
-    it('should render title', () => {
+
+    it('should render title', async () => {
         const title = screen.getByRole('heading', {  
             level: 1
         })
@@ -24,7 +25,7 @@ describe('Home Page', () => {
         expect(separator).toBeVisible()
     })
 
-    it('should render 3 cards', () => {
+    it('should render 3 cards', async () => {
         const cards = screen.getAllByRole('article')
 
         expect(cards.length).toBe(3)

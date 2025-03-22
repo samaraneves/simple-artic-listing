@@ -5,10 +5,7 @@ import Wrapper from "../../components/Wrapper"
 import Photo1 from '../../assets/photo_1.webp'
 import Photo2 from '../../assets/photo_2.webp'
 import Photo3 from '../../assets/photo_3.webp'
-
-import { lazy } from "react"
-
-const Card = lazy(() => import("../../components/Card"))
+import Card from "../../components/Card"
 
 type Card = {
     title: string
@@ -42,16 +39,17 @@ export default function Home() {
             <Separator />
 
             <aside className="w-full flex flex-col justify-center items-center gap-16 lg:max-w-3xl lg:mx-auto">
-                { 
-                    cards.map((card: Card, index: number) => (
-                         <Card
-                            key={index}
-                            title={card.title}
-                            time={card.time}
-                            image={card.image}
-                        />
-                    ))
-                }
+                    {
+                        cards.map((card: Card, index: number) => (
+                            <Card
+                                key={index}
+                                title={card.title}
+                                time={card.time}
+                                image={card.image}
+                            />
+                        ))
+                    }
+                
             </aside>
             
         </Wrapper>
